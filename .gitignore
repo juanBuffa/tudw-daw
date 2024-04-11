@@ -1,9 +1,9 @@
-*/dist
-*/node_modules
-*.env
+**/dist
+**/node_modules
+**.env
 
 logs
-*.log
+**.log
 npm-debug.log*
 pnpm-debug.log*
 yarn-debug.log*
@@ -21,39 +21,37 @@ lerna-debug.log*
 /.idea
 .project
 .classpath
-.c9/
-*.launch
+**.launch
 .settings/
-*.sublime-workspace
 
-*/tmp
-*/out-tsc
-*/bazel-out
+**/tmp
+**/out-tsc
+**/bazel-out
 
 .idea/
 .project
 .classpath
 .c9/
-*.launch
+**.launch
 .settings/
-*.sublime-workspace
+**.sublime-workspace
 
-*.vscode/*
-*!.vscode/settings.json
-*!.vscode/tasks.json
-*!.vscode/launch.json
-*!.vscode/extensions.json
-*.history/*
+**.vscode/*
+**!.vscode/settings.json
+**!.vscode/tasks.json
+**!.vscode/launch.json
+**!.vscode/extensions.json
+**.history/*
 
-*/.angular/cache
-*.sass-cache/
-*/connect.lock
-*/coverage
-*/libpeerconnection.log
-*testem.log
-*/typings
+**/.angular/cache
+**.sass-cache/
+**/connect.lock
+**/coverage
+**/libpeerconnection.log
+**testem.log
+**/typings
 
-*.DS_Store
-*Thumbs.db
+**.DS_Store
+**Thumbs.db
 
-*/documentation
+**/documentation
