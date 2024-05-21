@@ -1,0 +1,13 @@
+footer {
+  height: 20vh;
+  width: 100%;
+  background-color: aquamarine;
+  position: fixed;
+  bottom: 0;
+}
+
+@media only screen and (min-height: 400px) {
+  footer {
+    height: 10vh;
+  }
+}

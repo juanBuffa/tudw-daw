@@ -1,0 +1,23 @@
+main {
+    height: 80vh;
+    top: 10vh;
+    bottom: 10vh;
+    overflow: auto;
+    position: fixed !important;
+    width: 100%;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem;
+    flex-direction: column;
+  }
+
+  @media only screen and (min-height: 400px) {
+    .main {
+      height: 60vh;
+      top: 20vh;
+      bottom: 20vh;
+    }
+  }
+  

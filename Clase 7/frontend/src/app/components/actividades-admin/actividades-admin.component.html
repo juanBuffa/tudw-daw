@@ -1,0 +1,48 @@
+<app-base>
+  <app-tabla-actividades
+    #t
+    [valores]="actividades"
+    [(filaSeleccionada)]="actividadSeleccionada"
+    [columnas]="columnas"
+  >
+    <div>
+      <p-button
+        class="accion"
+        id="añadir"
+        label="Añadir"
+        icon="pi pi-plus"
+        (onClick)="nuevo()"
+      ></p-button>
+      <p-button
+        class="accion"
+        icon="pi pi-file"
+        label="Exportar"
+        (onClick)="t.table.exportCSV()"
+        pTooltip="Exportar"
+      ></p-button>
+    </div>
+    <div>
+      <p-button
+        class="accion"
+        icon="pi pi-pencil"
+        severity="secondary"
+        (onClick)="editar()"
+        pTooltip="Editar"
+        [disabled]="!this.actividadSeleccionada"
+      ></p-button>
+      <p-button
+        class="accion"
+        icon="pi pi-bars"
+        pTooltip="Auditoria"
+        severity="secondary"
+        [disabled]="!this.actividadSeleccionada"
+        (onClick)="auditoria()"
+      ></p-button></div
+  ></app-tabla-actividades>
+</app-base>
+<app-actividad-dialog
+  [(visible)]="dialogVisible"
+  [accion]="accion"
+  [actividad]="actividadSeleccionada"
+  (refrescar)="llenarTabla()"
+/>

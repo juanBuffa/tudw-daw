@@ -1,0 +1,14 @@
+:host ::ng-deep {
+  .p-button {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  :host ::ng-deep {
+    .p-button {
+      margin-bottom: 0rem;
+    }
+  }
+}

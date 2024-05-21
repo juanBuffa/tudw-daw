@@ -1,0 +1,53 @@
+<p-table
+  #dt
+  [value]="valores"
+  [tableStyle]="{ 'width': '80vw' }"
+  [scrollable]="true"
+  scrollHeight="50vh"
+  [columns]="columnas"
+  [selectionMode]="'single'"
+  [(selection)]="filaSeleccionada"
+  (onRowSelect)="seleccionar()"
+  [paginator]="true"
+  [rows]="5"
+>
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+        {{ col.header }} <p-sortIcon [field]="col.field"></p-sortIcon>
+        <p-columnFilter
+          *ngIf="col.filter"
+          [field]="col.field"
+          display="menu"
+          [showOperator]="false"
+          [showMatchModes]="true"
+          [matchModeOptions]="opcionesDeFiltro"
+          [showAddButton]="false"
+          [showClearButton]="false"
+          [showApplyButton]="false"
+        ></p-columnFilter>
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData let-columns="columns">
+    <tr [pSelectableRow]="rowData">
+      <td *ngFor="let col of columns">
+        {{
+          col.fecha
+            ? (rowData[col.field] | date : "medium")
+            : rowData[col.field]
+        }}
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="emptymessage">
+    <tr>
+      <td colspan="7">No se encontraron actividades.</td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="caption">
+    <div id="botonera">
+      <ng-content />
+    </div>
+  </ng-template>
+</p-table>

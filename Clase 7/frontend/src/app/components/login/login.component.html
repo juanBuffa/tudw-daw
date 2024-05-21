@@ -1,0 +1,15 @@
+<div id="inicio-de-sesion">
+  <form [formGroup]="form">
+    <h1>Inicio de sesión</h1>
+    <div class="contenedor-input">
+      <label for="nombre-usuario">Nombre de Usuario:</label>
+      <input id="nombre-usuario" pInputText type="text" formControlName="nombreUsuario" />
+    </div>
+    <div class="contenedor-input">
+      <label for="clave">Clave: </label>
+      <p-password id="clave" formControlName="clave"></p-password>
+    </div>
+    <p-button label="Confirmar" (onClick)="login()"></p-button>
+  </form>
+</div>
+<p-toast></p-toast>

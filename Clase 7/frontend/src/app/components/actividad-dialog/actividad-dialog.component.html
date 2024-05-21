@@ -1,0 +1,52 @@
+<p-dialog
+  header="{{ accion }} Actividad"
+  [(visible)]="visible"
+  (onHide)="cerrar()"
+  [modal]="true"
+>
+  <form [formGroup]="form">
+    <div class="input-container">
+      <label for="descripcion">Descripción: </label>
+      <textarea
+        rows="5"
+        cols="30"
+        pInputTextarea
+        id="descripcion"
+        formControlName="descripcion"
+      ></textarea>
+    </div>
+    <div class="input-container">
+      <label for="usuarioActual">Responsable: </label>
+      <p-dropdown
+        id="usuario"
+        [options]="usuarios"
+        optionLabel="nombreCompleto"
+        placeholder="Seleccionar"
+        formControlName="usuarioActual"
+      />
+    </div>
+    <div class="input-container">
+      <label for="prioridad">Prioridad: </label>
+      <p-dropdown
+        id="prioridad"
+        appendTo="body"
+        placeholder="Seleccionar"
+        [options]="prioridades"
+        formControlName="prioridad"
+      ></p-dropdown>
+    </div>
+    <ng-container *ngIf="actividad">
+      <div class="input-container">
+        <label for="estado">Estado: </label>
+        <p-dropdown
+          id="estado"
+          appendTo="body"
+          [options]="estados"
+          formControlName="estado"
+        ></p-dropdown>
+      </div>
+    </ng-container>
+    <p-button [label]="accion" (onClick)="enviar()" />
+  </form>
+</p-dialog>
+<p-toast></p-toast>

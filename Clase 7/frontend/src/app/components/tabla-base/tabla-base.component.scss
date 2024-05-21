@@ -1,0 +1,12 @@
+#botonera {
+  display: flex;
+  justify-content: space-between;
+}
+
+:host {
+  max-width: 100%;
+}
+
+#table-container {
+  max-width: 100%;
+}
